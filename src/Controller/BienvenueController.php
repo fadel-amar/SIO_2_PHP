@@ -30,8 +30,10 @@ class BienvenueController extends AbstractController
     public function bienvenues(): Response
     {
         //Appel simulé au modèle
-        $personne = ['hernandez','kolo muani', 'rabiot', 'maignan']
+        $personnes = ['hernandez','kolo', 'Griezmann', 'maignan'];
 
-        return $this->render('');
+        return $this->render('bienvenue/bienvenues.html.twig',[
+            "personnes"=> $personnes
+        ]);
     }
 }
