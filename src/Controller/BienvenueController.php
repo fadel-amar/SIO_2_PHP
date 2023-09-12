@@ -11,7 +11,13 @@ class BienvenueController extends AbstractController
     #[Route('/bienvenue', name: 'app_bienvenue')]
     public function bienvenue(): Response
     {
+
+        // Appel "simulé" au modèle
+        $prenom = 'dembele';
+
         // Appel à la vue
-        return $this->render('bienvenue/index.html.twig');
+        return $this->render('bienvenue/index.html.twig',[
+            "prenom" => $prenom
+        ]);
     }
 }
