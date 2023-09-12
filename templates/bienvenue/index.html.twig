@@ -5,10 +5,22 @@
 {% block body %}
 
 
-    <p>Bienvenue {{ prenom |capitalize }} dans le cours Symfony</p>
-    <p>le prenom a une longeur de  {{ prenom | length}} caractère</p>
 
-    {# tester si le prenom commpar la lettre j #}
+    {% if  prenom is defined %}
+        <p>Bienvenue {{ prenom |capitalize }} dans le cours Symfony</p>
+    {% else %}
+        <p>Bienvenue dans le cours Symfony</p>
+
+    {% endif %}
+
+
+
+
+
+
+{#    <p>le prenom a une longeur de  {{ prenom | length}} caractère</p> #}
+
+   {# #}{# tester si le prenom commpar la lettre j #}{#
     {% if prenom | first  == 'd' %}
         <p>Le prenom commence par la lettre de 'd'</p>
     {% else %}
@@ -22,5 +34,7 @@
     {% if prenom starts with 'd' or 'D' %}
         <p>Le prenom commence par la lettre de 'd' seondo solution del manana</p>
     {% endif %}
+
+    #}
 
 {% endblock %}
