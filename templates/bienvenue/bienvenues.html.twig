@@ -5,10 +5,10 @@
 {% block body %}
 
 
-<h1>Bienvenues aux personnes ci-dessous : </h1>
+    <h1>Bienvenues aux personnes ci-dessous : </h1>
     <ul>
         {% for personne in personnes %}
-            <li>{{ personne | capitalize    }}</li>
+            <li><a href=" {{ path( 'app_bienvenue_prenom', {"prenom" : personne } ) }}"> {{ personne | capitalize }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
