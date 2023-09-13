@@ -13,18 +13,14 @@
         {% endblock %}
     </head>
     <body>
+    {# Insérer le header #}
+    {% include 'partials/_navigation.html.twig' %}
 
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="{{ path('app_bienvenue') }}">Bienvenue </a></li>
-                    <li><a href="{{ path('app_bienvenues') }}">Bienvenues à tous</a></li>
-                </ul>
-            </nav>
-        </header>
+
 
         {% block body %}
-
         {% endblock %}
+
+
     </body>
 </html>
