@@ -26,8 +26,8 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
     padding: 0;
-    margin: 10px;
 }
+
 
 .listeHeader li {
     margin: 5px;

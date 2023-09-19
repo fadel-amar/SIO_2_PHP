@@ -23,7 +23,7 @@ class EtudiantController extends AbstractController
         ]);
     }
 
-    #[Route('/etudiants/{id}', name: 'app_etudiant_info')]
+    #[Route('/etudiants/{id}', name: 'app_etudiant_info', requirements: ['id' => '\d+'])]
     public function etudiant( EtudiantRepository $etudiantRepository, int $id): Response
     {
         // Appel au modèle
@@ -35,10 +35,19 @@ class EtudiantController extends AbstractController
         ]);
     }
 
-    public function  age (EtudiantRepository $etudiantRepository, date $dateNaissance) {
+    #[Route('/etudiants/mineurs', name: 'app_etudiant_mineurs_liste')]
+    public function listMineurs ( EtudiantRepository $etudiantRepository): Response
+    {
+        // Appel au modèle
 
+        $etudiants = $etudiantRepository->findMineurs();
+
+
+        // Appel à la vue
+        return $this->render('etudiant/index.html.twig',[
+            "etudiants" => $etudiants,
+        ]);
     }
-
 
 
 

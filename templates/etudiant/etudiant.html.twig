@@ -7,10 +7,12 @@
     <h1>Info étudiant</h1>
 
     <ul>
-        <li>{{ etudiant.prenom }}</li>
-        <li>{{ etudiant.nom }}</li>
-        <li>{{ etudiant.email }}</li>
-        <li>{{ etudiant.dateNaissance | date("d/m/Y") }}</li>
+        <li>Prénom : {{ etudiant.prenom }}</li>
+        <li>Nom : {{ etudiant.nom }}</li>
+        <li>Email : {{ etudiant.email }}</li>
+        <li>Email : {{ etudiant.email }}</li>
+        <li> Né le {{ etudiant.dateNaissance | date("d/m/Y") }}</li>
+        <li>Age : {{ etudiant.age }} ans</li>
     </ul>
 
 

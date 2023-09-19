@@ -78,4 +78,11 @@ class Etudiant
 
         return $this;
     }
+
+    public function  getAge () : int {
+
+        $dateJour = new \DateTime();
+        $interval = $this->dateNaissance->diff($dateJour);
+        return $interval->y;
+    }
 }
