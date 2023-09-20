@@ -3,18 +3,13 @@
 {% block title %}Hello PromotionController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>Liste des promotions</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/omarf/Documents/SIO2_DEV/PHP_SIO_2/Projets/Symfony/symfony-projet/src/Controller/PromotionController.php'|file_link(0) }}">src/Controller/PromotionController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/omarf/Documents/SIO2_DEV/PHP_SIO_2/Projets/Symfony/symfony-projet/templates/promotion/index.html.twig'|file_link(0) }}">templates/promotion/index.html.twig</a></code></li>
+        {% for promotion in promotions %}
+            <li><a href=" {{ path( 'app_promotion_info', {"id" : promotion.id } ) }}">  {{promotion.nom}} </a></li>
+        {% endfor %}
     </ul>
-</div>
+
+
 {% endblock %}
